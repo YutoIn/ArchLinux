@@ -5,9 +5,6 @@
 ## https://wiki.archlinux.org/title/General_recommendations
 
 # ----General settings----
-## chroot
-arch-chroot /mnt
-
 # System administration
 ## Time settings
 ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
@@ -48,8 +45,8 @@ Pacman -Syy
 ## Driver
 ### intel
 pacman -S --noconfirm xf86-video-intel
-### nvidia(zen-kernel)
-pacman -S --noconfirm nvidia-dkms nvidia-utils nvidia-settings
+### nvidia
+pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 echo options nvidia_drm modeset=1 | sudo tee /etc/modprobe.d/nvidia_drm.conf
 ## Display Server
 ### Wayland
@@ -120,8 +117,8 @@ pacman -S --noconfirm bash-completion
 # check it out later
 
 # Power Management
-## acpi(zen-kernel)
-pacman -S --noconfirm acpi acpi_call-dkms acpid
+## acpi
+pacman -S --noconfirm acpi acpi_call acpid
 systemctl enable acpid
 ## TLP
 pacman -S --noconfirm tlp
