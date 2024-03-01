@@ -35,6 +35,7 @@ pacman -S --noconfirm yay
 ## Mirrorlist update(Reflector)
 pacman -S --noconfirm reflector
 reflector -c Japan -a 5 --sort rate --save /etc/pacman.d/mirrorlist
+cp ./reflector.conf /etc/xdg/reflector/reflector.conf
 systemctl enable reflector.timer
 Pacman -Syy
 
@@ -101,6 +102,18 @@ pacman -S --noconfirm neofetch
 pacman -S --noconfirm htop
 ## tmux
 pacman -S --noconfirm tmux
+## eza
+pacman -S --noconfirm eza
+## dust
+pacman -S --noconfirm dust
+## bat
+pacman -S --noconfirm bat
+## fd
+pacman -S --noconfirm fd
+## ripgrep-all
+pacman -S --noconfirm ripgrep-all
+## duf
+pacman -S --noconfirm duf
 
 # Shell
 ## bash
@@ -175,7 +188,7 @@ pacman -S --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack
 
 # File System
 ## fstrim(btrfs trim timer)
-systemctl enable fstrim.timer
+#systemctl enable fstrim.timer
 ## ntfs-3g(ntfs support)
 pacman -S --noconfirm ntfs-3g
 ## exfat(exfat support)
