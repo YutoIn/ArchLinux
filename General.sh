@@ -188,7 +188,7 @@ pacman -S --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack
 
 # File System
 ## fstrim(btrfs trim timer)
-systemctl enable fstrim.timer
+#systemctl enable fstrim.timer
 ## ntfs-3g(ntfs support)
 pacman -S --noconfirm ntfs-3g
 ## exfat(exfat support)
