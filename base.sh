@@ -12,7 +12,7 @@
 
 # Base settings
 ## Base packages
-pacman -K base base-devel devtools
+pacman -K /mnt base base-devel devtools
 
 # Kernel settings
 ## CPU
@@ -33,20 +33,6 @@ pacstrap -K /mnt systemd-boot
 # XDG Base Directory settings
 pacstrap -K /mnt xdg-user-dirs xdg-utils
 
-# Replace Core Utilities commands with Modern Alternatives
-# ls to exa
-pacstrap -K /mnt exa
-# du to dust
-pacstrap -K /mnt dust
-# cat to bat
-pacstrap -K /mnt bat
-# find to fd
-pacstrap -K /mnt fd
-# grep to ripgrep-all
-pacstrap -K /mnt ripgrep-all
-#  df to duf
-pacstrap -K /mnt duf
-
 # git
 pacstrap -K /mnt git
 
@@ -60,6 +46,10 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # file copy
 ## General.sh
 cp General.sh /mnt/General.sh
+## 99-kmscon.conf
+cp 99-kmscon.conf /mnt/99-kmscon.conf
+## reflector.conf
+cp reflector.conf /mnt/reflector.conf
 
 # chroot
 arch-chroot /mnt
